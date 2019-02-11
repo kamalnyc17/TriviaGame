@@ -5,6 +5,9 @@ body {
     background-size: contain;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+ul {
+    list-style-type: none;
+}
 .container {    
     background-image: url("../images/Background_Trivia.jpg");  
     background-position: center;
@@ -42,4 +45,5 @@ body {
 img {
     height: 100px;
     width: 100px;
+    margin: auto;
 }
