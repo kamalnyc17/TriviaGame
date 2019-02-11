@@ -2,9 +2,35 @@ body {
     max-width: 980px;
     margin: auto;
     border: 1px solid black;
+    background-size: contain;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+.container {    
+    background-image: url("../images/Background_Trivia.jpg");  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height: 100vh; 
+    min-height: 100%;
+    border: 1px solid black;
+}
+.top-bottom {
+    height: 80px;
+}
+.subcontainer {
+    height: 80%;
+    width: 80%;
+    background-color: lightgoldenrodyellow;
+    margin: auto;
+    border: 1px solid black;
+}
+.heading,
+.pic-area {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
 img {
     height: 100px;
     width: 100px;
