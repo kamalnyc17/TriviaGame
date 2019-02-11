@@ -24,12 +24,20 @@ body {
     background-color: lightgoldenrodyellow;
     margin: auto;
     border: 1px solid black;
+    text-align: center;
+}
+.game-heading {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: bold;
+    color: palevioletred;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
 }
 .heading,
 .pic-area {
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
 }
 img {
     height: 100px;

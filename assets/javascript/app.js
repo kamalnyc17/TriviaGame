@@ -12,13 +12,13 @@ gameName[3] = ["When was the song Hotel California released?", "DDD1", "DDD2", "
 // game work flow starts here after the whole page is loaded
 $(document).ready(function () {
     for (let i = 0; i < 4; i++) {
-        $(".test-area").append(gameName[i][0] + '<br><br>');
+        $(".game-question").text(gameName[i][0]);
         for (let j=1; j< 5; j++){
-            $(".test-area").append(gameName[i][j] + '<br>');
+            $("#ans-"+(j).toString().trim()).text(gameName[i][j]);
         }
-        if (i < 3 ){
-            $(".test-area").empty();
-        }
+        //if (i < 3 ){
+         //   $(".test-area").empty();
+        //}
     }
 
     // testing show & hide
