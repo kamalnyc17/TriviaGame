@@ -1,0 +1,11 @@
+body {
+    max-width: 980px;
+    margin: auto;
+    border: 1px solid black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
