@@ -66,13 +66,12 @@ button {
     line-height: 20px;
     margin-top: 150px;
 }
-button:hover {
+button:hover,
+#restart:hover {
     color: white;
     background-color: lightslategray;
 }
 #restart:hover {
-    color: white;
-    background-color: lightslategray;
     cursor: pointer;
 }
 img {

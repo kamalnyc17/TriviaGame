@@ -27,7 +27,7 @@ var restartGame = function () {
     $("#incorrect-no").text(totalLose);
     $("#unanswered-no").text(totalUnAnswer);
     gameCounter     = 0;
-    gameTimeLeft    = 15;
+    gameTimeLeft    = 10;
     mySelection     = "";
     totalWin        = 0;
     totalLose       = 0;
@@ -44,7 +44,7 @@ var openingScreen = function () {
         $("#start").hide();
         $(".gen-style, .sub-style, img").hide();
         $(".time-count-down, .game-question, ul, li").show();
-        gameTimeLeft = 15;
+        gameTimeLeft = 10;
         $("#time-left").text(gameTimeLeft);
         var gameTime = setInterval(function () {
             $("#time-left").text(gameTimeLeft);
@@ -61,10 +61,10 @@ var openingScreen = function () {
                     var nextQuestion = setInterval(function () {
                         openingScreen();
                         clearInterval(nextQuestion);
-                    }, 2000);
+                    }, 3000);
                 }
             }
-        }, 2000);
+        }, 3000);
 
         $(".game-question").text(gameName[gameCounter][0]);
         for (let j = 1; j < 5; j++) {
@@ -90,7 +90,7 @@ var optSelect = function (gameTime1) {
             var nextQuestion = setInterval(function () {
                 openingScreen();
                 clearInterval(nextQuestion);
-            }, 2000);
+            }, 3000);
         } else if (correctAnswer !== mySelection) {
             $("#correct1").text(correctAnswer);
             $(".loser-result, .correct-answer1, #loser").show(); // if the answer was wrong
@@ -100,7 +100,7 @@ var optSelect = function (gameTime1) {
             var nextQuestion = setInterval(function () {
                 openingScreen();
                 clearInterval(nextQuestion);
-            }, 2000);
+            }, 3000);
         }
         mySelection = "" // reinitializing user's selection at the end of each Q&A
     });
