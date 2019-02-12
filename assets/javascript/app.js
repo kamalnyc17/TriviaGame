@@ -21,7 +21,7 @@ var startGame = function () {
 // display score card and allow to user to replay
 var restartGame = function () {
     $("#start").hide();
-    $(".time-count-down, .game-question, #start, .winer-result, .loser-result, .correct-answer1, .timeout-result, .correct-answer2, li, img").hide();
+    $(".time-count-down, .game-question, #start, .winer-result, .loser-result, .correct-answer1, .Interval-result, .correct-answer2, li, img").hide();
     $(".final-result, .correct, .incorrect, .unanswered, #restart").show();
     $("#correct-no").text(totalWin);
     $("#incorrect-no").text(totalLose);
@@ -57,14 +57,15 @@ var openingScreen = function () {
                     $("#correct2").text(correctAnswer);
                     $(".timeout-result, .correct-answer2, #timeout").show();
                     totalUnAnswer++;
+                    console.log( "unanswered. gameCounter: " + gameCounter);
                     // go to the next question
-                    var nextQuestion = setInterval(function () {
+                    var nextQuestion2 = setInterval(function () {
+                        clearInterval(nextQuestion2);
                         openingScreen();
-                        clearInterval(nextQuestion);
                     }, 3000);
                 }
             }
-        }, 3000);
+        }, 1000); // timer for count down
 
         $(".game-question").text(gameName[gameCounter][0]);
         for (let j = 1; j < 5; j++) {
@@ -86,20 +87,22 @@ var optSelect = function (gameTime1) {
             $(".winer-result, #winner").show();
             clearInterval(gameTime1);
             totalWin++;
+            console.log( "correct. gameCounter: " + gameCounter);
             // go to the next question
             var nextQuestion = setInterval(function () {
-                openingScreen();
                 clearInterval(nextQuestion);
+                openingScreen();
             }, 3000);
         } else if (correctAnswer !== mySelection) {
             $("#correct1").text(correctAnswer);
             $(".loser-result, .correct-answer1, #loser").show(); // if the answer was wrong
             clearInterval(gameTime1);
             totalLose++;
+            console.log( "wrong. gameCounter: " + gameCounter);
             // go to the next question
-            var nextQuestion = setInterval(function () {
+            var nextQuestion1 = setInterval(function () {
+                clearInterval(nextQuestion1);
                 openingScreen();
-                clearInterval(nextQuestion);
             }, 3000);
         }
         mySelection = "" // reinitializing user's selection at the end of each Q&A
