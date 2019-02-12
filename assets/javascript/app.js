@@ -8,8 +8,6 @@ var totalWin = 0;
 var totalLose = 0;
 var totalUnAnswer = 0;
 
-//
-
 /* initializing array. 1st element is question. last element is the correct answer.  */
 gameName[0] = ["What was the first hit of Michael Jackson?", "AAA1", "AAA2", "AAA3", "AAA4", "AAA1"];
 gameName[1] = ["What was the first movie of whitney houston?", "BBB1", "BBB2", "BBB3", "BBB4", "BBB2"];
@@ -57,7 +55,14 @@ var openingScreen = function () {
         gameCounter++;
         optSelect(gameTime);
     } else {
-        alert("Game Over!");
+        // game over. display score board and allow the user to play again without reloading the page
+        gameCounter = 0;
+        var gameRestart = function() {            
+        $("#start").hide();
+        $(".time-count-down, .game-question, #start, .winer-result, .loser-result, .correct-answer1, .timeout-result, .correct-answer2, li, img").hide();
+
+        }
+        
     }
 }
 // action after selecting an option
@@ -86,8 +91,6 @@ var optSelect = function (gameTime1) {
         }
     });
 }
-
-
 
 // main loop
 $(document).ready(function () {
