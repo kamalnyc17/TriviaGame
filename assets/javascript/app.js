@@ -21,10 +21,20 @@ var openingScreen = function() {
         $("#ans-" + (j).toString().trim()).text(gameName[0][j]);
     }
     correctAnswer = gameName[0][5];
-    console.log( correctAnswer);
 }
 
-
+// action after selecting an option
+var optSelect = function() {
+    $("li").on('click', function() {        
+        var mySelection  = $(this).text(); 
+        if (correctAnswer === mySelection) {
+            $(".winer-result, #winner").show();
+        } else if (correctAnswer !== mySelection){
+            $("#correct1").text( correctAnswer);
+            $(".loser-result, .correct-answer1, #loser").show();
+        }
+    })
+}
 
 
 
@@ -34,6 +44,7 @@ $(document).ready(function() {
 
     $("#start").on('click', function() {
         openingScreen();
+        optSelect();
     })
 });
 
