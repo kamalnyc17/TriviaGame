@@ -7,18 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Totally Trivial Trivia</title>
 
+    <!-- linking stylesheets -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
+    <!-- out container -->
     <div class="container">
-        <div class="top-bottom"></div>
+        <div class="top-bottom"></div> <!-- buffer containter to add top/bottom margin -->
+        <!-- main container to hold everything -->
         <div class="subcontainer">
             <div class="heading">
                 <p class="game-heading">Totally Trivial Trivia!</p>
             </div>
+            <!-- game Q&A body -->
             <div class="question-section">
+                <p class="time-count-down">Time Remaining: <span id="time-left">0</span> Seconds.</p>
                 <p class="game-question"></p>
                 <ul>
                     <li id="ans-1"></li>
@@ -27,14 +32,32 @@
                     <li id="ans-4"></li>
                 </ul>
             </div>
-            <div class="pic-area">
+            <!-- start button -->
+            <button type="button" id="start">Start</button>
+            <!-- result section with animation -->
+            <div class="winner-area">
+                <p class="winer-result">Correct!</p>
                 <img id="winner" src="assets/images/Winner.webp">
             </div>
-            <div class="pic-area">
+            <div class="loser-area">
+                <p class="loser-result">Nope!</p>
+                <p class="correct-answer">The Correct Answer Was: <span id="correct1"></span></p>
                 <img id="loser" src="assets/images/Loser.webp">
             </div>
+            <div class="time-out">
+                <p class="timeout-result">Out of Time!</p>
+                <p class="correct-answer">The Correct Answer Was: <span id="correct2"></span></p>
+                <img id="loser" src="assets/images/time out.gif">
+            </div>
+            <div class="result">
+                <p class="final-result">All done. Here is how you did!</p>
+                <p class="correct">Correct Answers: <span id="correct-no">0</span></p>
+                <p class="incorrect">Incorrect Answers: <span id="incorrect-no">0</span></p>
+                <p class="unanswered">Unanswered Answers: <span id="unanswered-no">0</span></p>
+                <span id="restart">Start Over?</span>
+            </div>
         </div>
-        <div class="top-bottom"></div>
+        <div class="top-bottom"></div> <!-- buffer containter to add top/bottom margin -->
     </div>
 
     <!-- java script files -->

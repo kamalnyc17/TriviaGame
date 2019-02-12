@@ -37,11 +37,6 @@ ul {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 100%;
 }
-.heading,
-.pic-area {
-    display: flex;
-    flex-wrap: wrap;
-}
 img {
     height: 100px;
     width: 100px;
