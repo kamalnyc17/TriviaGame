@@ -1,3 +1,4 @@
+/* top level style */
 body {
     max-width: 980px;
     margin: auto;
@@ -8,6 +9,7 @@ body {
 ul {
     list-style-type: none;
 }
+/* styling the containers */
 .container {    
     background-image: url("../images/Background_Trivia.jpg");  
     background-position: center;
@@ -29,11 +31,12 @@ ul {
     border: 1px solid black;
     text-align: center;
 }
+/* page heading */
 .game-heading {
     font-size: 36px;
     line-height: 48px;
     font-weight: bold;
-    color: palevioletred;
+    color: blue;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 100%;
 }
