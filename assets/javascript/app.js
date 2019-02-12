@@ -1,5 +1,5 @@
 var gameName = [];
-var i;
+var correctAnswer;
 
 /* initializing array. 1st element is question. last element is the correct answer.  */
 gameName[0] = ["What was the first hit of Michael Jackson?", "AAA1", "AAA2", "AAA3", "AAA4", "AAA1"];
@@ -12,11 +12,29 @@ var startGame = function() {
     $(".gen-style, .sub-style, img").hide();
 } 
 
+// opening screen of the game
+var openingScreen = function() {
+    $("#start").hide();
+    $(".time-count-down, game-question, ul, li").show();
+    $(".game-question").text(gameName[0][0]);
+    for (let j = 1; j < 5; j++) {
+        $("#ans-" + (j).toString().trim()).text(gameName[0][j]);
+    }
+    correctAnswer = gameName[0][5];
+    console.log( correctAnswer);
+}
+
+
+
+
+
 // main loop
 $(document).ready(function() {
     startGame();
 
-    
+    $("#start").on('click', function() {
+        openingScreen();
+    })
 });
 
 

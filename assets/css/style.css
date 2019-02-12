@@ -9,6 +9,9 @@ body {
 ul {
     list-style-type: none;
 }
+li:hover {
+    font-weight: bold;
+}
 /* styling the containers */
 .container {    
     background-image: url("../images/Background_Trivia.jpg");  
