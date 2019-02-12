@@ -1,7 +1,14 @@
 var gameName = [];
+// these need to reset at start
 var correctAnswer;
 var gameCounter = 0;
-var gameTimeLeft = 15;
+var gameTimeLeft;
+var mySelection = "";
+var totalWin = 0;
+var totalLose = 0;
+var totalUnAnswer = 0;
+
+//
 
 /* initializing array. 1st element is question. last element is the correct answer.  */
 gameName[0] = ["What was the first hit of Michael Jackson?", "AAA1", "AAA2", "AAA3", "AAA4", "AAA1"];
@@ -16,46 +23,68 @@ var startGame = function () {
 
 // opening screen of the game
 var openingScreen = function () {
-    $("#start").hide();
-    $(".gen-style, .sub-style, img").hide();
-    $(".time-count-down, .game-question, ul, li").show();
-    var gameTime = setInterval(function () {
+    if (gameCounter < 4) {
+        $("#start").hide();
+        $(".gen-style, .sub-style, img").hide();
+        $(".time-count-down, .game-question, ul, li").show();
+        gameTimeLeft = 15;
         $("#time-left").text(gameTimeLeft);
-        gameTimeLeft--;
-        if (gameTimeLeft <= 0) {
+        var gameTime = setInterval(function () {
             $("#time-left").text(gameTimeLeft);
-            clearInterval(gameTime);
-        }
-    }, 1000);
+            gameTimeLeft--;
+            if (gameTimeLeft <= 0) {
+                $("#time-left").text(gameTimeLeft);
+                clearInterval(gameTime);
+                // if the time is up and user didn't select anything
+                if (mySelection === "") {
+                    $("#correct2").text(correctAnswer);
+                    $(".timeout-result, .correct-answer2, #timeout").show();
+                    totalUnAnswer++;
+                    // go to the next question
+                    var nextQuestion = setInterval(function () {
+                        openingScreen();
+                        clearInterval(nextQuestion);
+                    }, 1000);
+                }
+            }
+        }, 1000);
 
-    $(".game-question").text(gameName[gameCounter][0]);
-    for (let j = 1; j < 5; j++) {
-        $("#ans-" + (j).toString().trim()).text(gameName[gameCounter][j]);
+        $(".game-question").text(gameName[gameCounter][0]);
+        for (let j = 1; j < 5; j++) {
+            $("#ans-" + (j).toString().trim()).text(gameName[gameCounter][j]);
+        }
+        correctAnswer = gameName[gameCounter][5];
+        gameCounter++;
+        optSelect(gameTime);
+    } else {
+        alert("Game Over!");
     }
-    correctAnswer = gameName[0][5];
-    gameCounter++;
-    optSelect(gameTime);
 }
 // action after selecting an option
-var optSelect = function ( gameTime1 ) {
-    var mySelection = "";
+var optSelect = function (gameTime1) {
     $("li").on('click', function () {
         mySelection = $(this).text();
-        if (correctAnswer === mySelection) {
+        if (correctAnswer === mySelection) { // if the answer was correct
             $(".winer-result, #winner").show();
             clearInterval(gameTime1);
+            totalWin++;
+            // go to the next question
+            var nextQuestion = setInterval(function () {
+                openingScreen();
+                clearInterval(nextQuestion);
+            }, 1000);
         } else if (correctAnswer !== mySelection) {
             $("#correct1").text(correctAnswer);
-            $(".loser-result, .correct-answer1, #loser").show();
+            $(".loser-result, .correct-answer1, #loser").show(); // if the answer was wrong
             clearInterval(gameTime1);
-        } 
+            totalLose++
+            // go to the next question
+            var nextQuestion = setInterval(function () {
+                openingScreen();
+                clearInterval(nextQuestion);
+            }, 1000);
+        }
     });
-
-    if ((gameTimeLeft <= 0) && (mySelection="")){
-        clearInterval(gameTime);
-        $("#correct2").text(correctAnswer);
-        $(".timeout-result, .correct-answer2, #timeout").show();
-    }
 }
 
 
@@ -68,26 +97,3 @@ $(document).ready(function () {
         openingScreen();
     })
 });
-
-
-/* game work flow starts here after the whole page is loaded
-$(document).ready(function () {
-
-    for (i = 0; i < 4; i++) {
-        $(".game-question").text(gameName[i][0]);
-        for (let j = 1; j < 5; j++) {
-            $("#ans-" + (j).toString().trim()).text(gameName[i][j]);
-        }
-    }
-
-    // testing show & hide
-    $("#winner").on('click', function () {
-        $("#loser").show();
-        $("#winner").hide();
-    });
-    $("#loser").on('click', function () {
-        $("#loser").hide();
-        $("#winner").show();
-    });
-});
-*/
