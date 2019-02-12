@@ -33,15 +33,40 @@ ul {
 }
 /* page heading */
 .game-heading {
-    font-size: 36px;
+    font-size: 44px;
     line-height: 48px;
+    margin-bottom: 10px;
     font-weight: bold;
     color: blue;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 100%;
+}
+/* different font style across the page*/
+.gen-style {
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.sub-style {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/* styling the image & button */
+button {
+    padding: 10px 50px;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+button:hover {
+    color: white;
+    background-color: lightslategray;
 }
 img {
     height: 100px;
     width: 100px;
     margin: auto;
 }
+/* end of style sheet */
