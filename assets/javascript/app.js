@@ -1,5 +1,4 @@
 var gameName = [];
-// these need to reset at start
 var correctAnswer;
 var gameCounter = 0;
 var gameTimeLeft;
@@ -17,6 +16,26 @@ gameName[3] = ["When was the song Hotel California released?", "DDD1", "DDD2", "
 // start the game with only <start> button visible
 var startGame = function () {
     $(".gen-style, .sub-style, img").hide();
+}
+
+// display score card and allow to user to replay
+var restartGame = function () {
+    $("#start").hide();
+    $(".time-count-down, .game-question, #start, .winer-result, .loser-result, .correct-answer1, .timeout-result, .correct-answer2, li, img").hide();
+    $(".final-result, .correct, .incorrect, .unanswered, #restart").show();
+    $("#correct-no").text(totalWin);
+    $("#incorrect-no").text(totalLose);
+    $("#unanswered-no").text(totalUnAnswer);
+    gameCounter     = 0;
+    gameTimeLeft    = 15;
+    mySelection     = "";
+    totalWin        = 0;
+    totalLose       = 0;
+    totalUnAnswer   = 0;
+
+    $("#restart").on('click', function() {
+        openingScreen();
+    });
 }
 
 // opening screen of the game
@@ -42,10 +61,10 @@ var openingScreen = function () {
                     var nextQuestion = setInterval(function () {
                         openingScreen();
                         clearInterval(nextQuestion);
-                    }, 1000);
+                    }, 2000);
                 }
             }
-        }, 1000);
+        }, 2000);
 
         $(".game-question").text(gameName[gameCounter][0]);
         for (let j = 1; j < 5; j++) {
@@ -56,13 +75,7 @@ var openingScreen = function () {
         optSelect(gameTime);
     } else {
         // game over. display score board and allow the user to play again without reloading the page
-        gameCounter = 0;
-        var gameRestart = function() {            
-        $("#start").hide();
-        $(".time-count-down, .game-question, #start, .winer-result, .loser-result, .correct-answer1, .timeout-result, .correct-answer2, li, img").hide();
-
-        }
-        
+        restartGame();
     }
 }
 // action after selecting an option
@@ -77,18 +90,19 @@ var optSelect = function (gameTime1) {
             var nextQuestion = setInterval(function () {
                 openingScreen();
                 clearInterval(nextQuestion);
-            }, 1000);
+            }, 2000);
         } else if (correctAnswer !== mySelection) {
             $("#correct1").text(correctAnswer);
             $(".loser-result, .correct-answer1, #loser").show(); // if the answer was wrong
             clearInterval(gameTime1);
-            totalLose++
+            totalLose++;
             // go to the next question
             var nextQuestion = setInterval(function () {
                 openingScreen();
                 clearInterval(nextQuestion);
-            }, 1000);
+            }, 2000);
         }
+        mySelection = "" // reinitializing user's selection at the end of each Q&A
     });
 }
 

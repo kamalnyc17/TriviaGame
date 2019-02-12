@@ -70,6 +70,11 @@ button:hover {
     color: white;
     background-color: lightslategray;
 }
+#restart:hover {
+    color: white;
+    background-color: lightslategray;
+    cursor: pointer;
+}
 img {
     height: 100px;
     width: 100px;
