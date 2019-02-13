@@ -6,11 +6,24 @@ var totalLose = 0;
 var totalUnanswer = 0;
 var newAnswer;
 var isChecked = false;
+var timeLeft = 15
+var timeCounter;
 
+// count down clock
+function decrement(){
+    timeLeft--; 
+    $("#time-left").text( timeLeft );
+
+    if (timeLeft <= 0){
+        answerReview();
+        clearInterval(timeCounter);
+    }
+}
 // reviewing answer
 var answerReview = function () {
     $("#done, .question-head, label, input, span").hide();
     $(".result-top, #scoreboard, #win, #lose, #unanswer, #totwin, #totlose, #totun").show();
+
     for (let i = 1; i < 6; i++) {
         //grabbing the radio button selection 
         radioName = 'question' + (i).toString().trim();
@@ -40,9 +53,13 @@ $(document).ready(function () {
     $("#start").on('click', function () {
         $("#done, .question-head, label, input, span").show();
         $("#start").hide();
+        
+        //calling count down
+        timeCounter = setInterval(decrement, 1000);
     });
 
     $("#done").on('click', function() {
         answerReview();
     });
+
 });
