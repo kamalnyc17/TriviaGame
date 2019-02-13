@@ -24,50 +24,53 @@
             <!-- game Q&A body -->
             <div class="question-section">
                 <p class="question-head time-count-down">Time Remaining: <span id="time-left">15</span> Seconds.</p>
+                
+                <!-- results section -->
+                <div class="result-section">
+                    <p id="scoreboard">All Done!</p>
+                    <p id="win">Correct Answers: <span id="totwin">0</span></p>
+                    <p id="lose">Incorrect Answers: <span id="totlose">0</span></p>
+                    <p id="unanswer">Unanswered <span id="totun">0</span></p>
+                </div>
+
+                <!-- user input section-->
                 <form action="">
                     <!-- first question-->
                     <label class="question-head">What was the first hit of Michael Jackson?</label><br>
-                    <input type="radio" name="question1" value="Beat It"><span>Beat It</span>
-                    <input type="radio" name="question1" value="The Girl Is Mine"><span>The Girl Is Mine</span>
-                    <input type="radio" name="question1" value="Thriller"><span>Thriller</span>
-                    <input type="radio" name="question1" value="Bad"><span>Bad</span>
+                    <input type="radio" name="question1" id="q1" value="Beat It"><span>Beat It</span>
+                    <input type="radio" name="question1" id="q1" value="The Girl Is Mine"><span>The Girl Is Mine</span>
+                    <input type="radio" name="question1" id="q1" value="Thriller"><span>Thriller</span>
+                    <input type="radio" name="question1" id="q1" value="Bad"><span>Bad</span>
 
                     <!-- second question -->
                     <br><br><label class="question-head">What was the first movie of Whitney Houston?</label><br>
-                    <input type="radio" name="question2" value="The Bodyguard"><span>The Bodyguard</span>
-                    <input type="radio" name="question2" value="Whitney"><span>Whitney</span>
-                    <input type="radio" name="question2" value="Waiting to Exhale"><span>Waiting to Exhale</span>
-                    <input type="radio" name="question2" value="The Preacher's Wife"><span>The Preacher's Wife</span>
+                    <input type="radio" name="question2" id="q2" value="The Bodyguard"><span>The Bodyguard</span>
+                    <input type="radio" name="question2" id="q2" value="Whitney"><span>Whitney</span>
+                    <input type="radio" name="question2" id="q2" value="Waiting to Exhale"><span>Waiting to Exhale</span>
+                    <input type="radio" name="question2" id="q2" value="The Preacher's Wife"><span>The Preacher's Wife</span>
 
                     <!-- third question -->
                     <br><br><label class="question-head">What is the name of the song with David Bowie & Mick Jagger?</label><br>
-                    <input type="radio" name="question3" value="Under Pressure"><span>Under Pressure</span>
-                    <input type="radio" name="question3" value="Paint It Black"><span>Paint It Black</span>
-                    <input type="radio" name="question3" value="Space Oddity"><span>Space Oddity</span>
-                    <input type="radio" name="question3" value="Dancing in the Street"><span>Dancing in the Street</span>
+                    <input type="radio" name="question3" id="q3" value="Under Pressure"><span>Under Pressure</span>
+                    <input type="radio" name="question3" id="q3" value="Paint It Black"><span>Paint It Black</span>
+                    <input type="radio" name="question3" id="q3" value="Space Oddity"><span>Space Oddity</span>
+                    <input type="radio" name="question3" id="q3" value="Dancing in the Street"><span>Dancing in the Street</span>
                     
                     <!-- fourth question -->
                     <br><br><label class="question-head">When was the song Hotel California released?</label><br>
-                    <input type="radio" name="question4" value="1977"><span>1977</span>
-                    <input type="radio" name="question4" value="1982"><span>1982</span>
-                    <input type="radio" name="question4" value="1975"><span>1975</span>
-                    <input type="radio" name="question4" value="1984"><span>1984</span>
+                    <input type="radio" name="question4" id="q4" value="1977"><span>1977</span>
+                    <input type="radio" name="question4" id="q4" value="1982"><span>1982</span>
+                    <input type="radio" name="question4" id="q4" value="1975"><span>1975</span>
+                    <input type="radio" name="question4" id="q4" value="1984"><span>1984</span>
                     
                     <!-- fifth question -->
                     <br><br><label class="question-head">What was the first full length CGI movie?</label><br>
-                    <input type="radio" name="question5" value="The Lion King"><span>The Lion King</span>
-                    <input type="radio" name="question5" value="The Flintstones"><span>The Flintstones</span>
-                    <input type="radio" name="question5" value="Toy Story"><span>Toy Story</span>
-                    <input type="radio" name="question5" value="A Bug's Life"><span>A Bug's Life</span>
+                    <input type="radio" name="question5" id="q5" value="The Lion King"><span>The Lion King</span>
+                    <input type="radio" name="question5" id="q5" value="The Flintstones"><span>The Flintstones</span>
+                    <input type="radio" name="question5" id="q5" value="Toy Story"><span>Toy Story</span>
+                    <input type="radio" name="question5" id="q5" value="A Bug's Life"><span>A Bug's Life</span>
                 </form>
             </div>
-            <!-- results section -->
-            <div class="result-section">
-                    <p id="scoreboard">All Done!</p>
-                    <p id="win">Correct Answers: <span id="totwin">0</span></p>
-                    <p id="lose">Incorrect Answers: <span id="totlose"></span></p>
-                    <p id="unanswer">Unanswered <span id="totun"></span></p>
-                </div>
             <!-- buttons to start and end the game -->
             <button type="button" id="start">Start</button>            
             <button type="button" id="done">Done!</button>
