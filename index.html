@@ -23,46 +23,54 @@
             </div>
             <!-- game Q&A body -->
             <div class="question-section">
-                <p class="gen-style time-count-down">Time Remaining: <span id="time-left">15</span> Seconds.</p>
-                <p class="gen-style game-question"></p>
-                <ul>
-                    <li id="ans-1"></li>
-                    <li id="ans-2"></li>
-                    <li id="ans-3"></li>
-                    <li id="ans-4"></li>
-                </ul>
+                <p class="question-head time-count-down">Time Remaining: <span id="time-left">15</span> Seconds.</p>
+                <form action="">
+                    <!-- first question-->
+                    <label class="question-head">What was the first hit of Michael Jackson?</label><br>
+                    <input type="radio" name="question1" value="Beat It"><span>Beat It</span>
+                    <input type="radio" name="question1" value="The Girl Is Mine"><span>The Girl Is Mine</span>
+                    <input type="radio" name="question1" value="Thriller"><span>Thriller</span>
+                    <input type="radio" name="question1" value="Bad"><span>Bad</span>
+
+                    <!-- second question -->
+                    <br><br><label class="question-head">What was the first movie of Whitney Houston?</label><br>
+                    <input type="radio" name="question2" value="The Bodyguard"><span>The Bodyguard</span>
+                    <input type="radio" name="question2" value="Whitney"><span>Whitney</span>
+                    <input type="radio" name="question2" value="Waiting to Exhale"><span>Waiting to Exhale</span>
+                    <input type="radio" name="question2" value="The Preacher's Wife"><span>The Preacher's Wife</span>
+
+                    <!-- third question -->
+                    <br><br><label class="question-head">What is the name of the song with David Bowie & Mick Jagger?</label><br>
+                    <input type="radio" name="question3" value="Under Pressure"><span>Under Pressure</span>
+                    <input type="radio" name="question3" value="Paint It Black"><span>Paint It Black</span>
+                    <input type="radio" name="question3" value="Space Oddity"><span>Space Oddity</span>
+                    <input type="radio" name="question3" value="Dancing in the Street"><span>Dancing in the Street</span>
+                    
+                    <!-- fourth question -->
+                    <br><br><label class="question-head">When was the song Hotel California released?</label><br>
+                    <input type="radio" name="question4" value="1977"><span>1977</span>
+                    <input type="radio" name="question4" value="1982"><span>1982</span>
+                    <input type="radio" name="question4" value="1975"><span>1975</span>
+                    <input type="radio" name="question4" value="1984"><span>1984</span>
+                    
+                    <!-- fifth question -->
+                    <br><br><label class="question-head">What was the first full length CGI movie?</label><br>
+                    <input type="radio" name="question5" value="The Lion King"><span>The Lion King</span>
+                    <input type="radio" name="question5" value="The Flintstones"><span>The Flintstones</span>
+                    <input type="radio" name="question5" value="Toy Story"><span>Toy Story</span>
+                    <input type="radio" name="question5" value="A Bug's Life"><span>A Bug's Life</span>
+                </form>
             </div>
-            <!-- start button -->
-            <button type="button" id="start">Start</button>
-            <!-- result section with animation -->
-            <div class="winner-area">
-                <p class="gen-style winer-result">Correct!</p>
-                <img id="winner" src="assets/images/Winner.webp">
-            </div>
-            <div class="loser-area">
-                <p class="gen-style loser-result">Nope!</p>
-                <p class="sub-style correct-answer1">The Correct Answer Was: <span id="correct1"></span></p>
-                <img id="loser" src="assets/images/Loser.webp">
-            </div>
-            <div class="time-out">
-                <p class="gen-style timeout-result">Out of Time!</p>
-                <p class="sub-style correct-answer2">The Correct Answer Was: <span id="correct2"></span></p>
-                <img id="timeout" src="assets/images/time out.gif">
-            </div>
-            <div class="result">
-                <p class="gen-style final-result">All done. Here is how you did!</p>
-                <p class="sub-style correct">Correct Answers: <span id="correct-no">0</span></p>
-                <p class="sub-style incorrect">Incorrect Answers: <span id="incorrect-no">0</span></p>
-                <p class="sub-style unanswered">Unanswered Answers: <span id="unanswered-no">0</span></p>
-                <span class="gen-style" id="restart">Start Over?</span>
-            </div>
+
+            <button type="button" id="start">Start</button>            
+            <button type="button" id="done">Done!</button>
         </div>
         <div class="top-bottom"></div> <!-- buffer containter to add top/bottom margin -->
     </div>
 
     <!-- java script files -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/app1.js"></script>
 </body>
 
 </html>

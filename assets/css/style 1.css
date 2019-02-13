@@ -6,6 +6,12 @@ body {
     background-size: contain;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+ul {
+    list-style-type: none;
+}
+li:hover {
+    font-weight: bold;
+}
 /* styling the containers */
 .container {    
     background-image: url("../images/Background_Trivia.jpg");  
@@ -32,29 +38,25 @@ body {
 .game-heading {
     font-size: 44px;
     line-height: 48px;
-    font-weight: bold;
     margin-bottom: 10px;
+    font-weight: bold;
     color: blue;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     width: 100%;
 }
-
 /* different font style across the page*/
-.question-head {
-    font-size: 20px;
-    line-height: 32px;
-    margin-bottom: 20px;
+.gen-style {
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
-input[type=radio]{
-    width   : 28px;
+.sub-style {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
-input[type="radio"]:checked+span {
-    font-weight: bold;
-    color: red;
-}
-
-/*----- */
 /* styling the image & button */
 button {
     padding: 10px 50px;
@@ -62,6 +64,7 @@ button {
     border-radius: 12px;
     font-size: 16px;
     line-height: 20px;
+    margin-top: 175px;
 }
 button:hover,
 #restart:hover {
