@@ -21,17 +21,17 @@
             <div class="heading">
                 <p class="game-heading">Totally Trivial Trivia!</p>
             </div>
+            <!-- results section -->                
+            <div class="result-top"></div> <!-- buffer containter to add margin above result-->
+            <div class="result-section">
+                <p id="scoreboard">All Done!</p>
+                <p id="win">Correct Answers: <span id="totwin">0</span></p>
+                <p id="lose">Incorrect Answers: <span id="totlose">0</span></p>
+                <p id="unanswer">Unanswered <span id="totun">0</span></p>
+            </div>
             <!-- game Q&A body -->
             <div class="question-section">
-                <p class="question-head time-count-down">Time Remaining: <span id="time-left">15</span> Seconds.</p>
-                
-                <!-- results section -->
-                <div class="result-section">
-                    <p id="scoreboard">All Done!</p>
-                    <p id="win">Correct Answers: <span id="totwin">0</span></p>
-                    <p id="lose">Incorrect Answers: <span id="totlose">0</span></p>
-                    <p id="unanswer">Unanswered <span id="totun">0</span></p>
-                </div>
+                <p class="question-head time-count-down">Time Remaining: <span id="time-left">15</span> Seconds.</p>                             
 
                 <!-- user input section-->
                 <form action="">
@@ -80,7 +80,7 @@
 
     <!-- java script files -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/app1.js"></script>
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>

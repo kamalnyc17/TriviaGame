@@ -17,7 +17,8 @@ body {
     min-height: 100%;
     border: 1px solid black;
 }
-.top-bottom {
+.top-bottom,
+.result-top {
     height: 80px;
 }
 .subcontainer {
@@ -49,12 +50,13 @@ body {
 input[type=radio]{
     width   : 28px;
 }
+input[type=radio]:hover {
+    cursor: pointer;
+}
 input[type="radio"]:checked+span {
     font-weight: bold;
     color: red;
 }
-
-/*----- */
 /* styling the image & button */
 button {
     padding: 10px 50px;
@@ -63,17 +65,8 @@ button {
     font-size: 16px;
     line-height: 20px;
 }
-button:hover,
-#restart:hover {
+button:hover {
     color: white;
     background-color: lightslategray;
-}
-#restart:hover {
     cursor: pointer;
 }
-img {
-    height: 100px;
-    width: 100px;
-    margin: auto;
-}
-/* end of style sheet */
