@@ -53,6 +53,7 @@ input[type=radio]{
 input[type=radio]:hover {
     cursor: pointer;
 }
+#time-left,
 input[type="radio"]:checked+span {
     font-weight: bold;
     color: red;
