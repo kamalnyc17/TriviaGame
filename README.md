@@ -8,3 +8,5 @@
 
 4. The count down time will be displayed at the top of the screen and the game will show the final score once the time is up or 
 the user clicks on the "done" button
+
+5. Contact me with any additional question at kamalnyc17@gmail.com
