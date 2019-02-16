@@ -60,6 +60,7 @@ $(document).ready(function () {
 
     $("#done").on('click', function() {
         answerReview();
+        clearInterval(timeCounter);
     });
 
 });
